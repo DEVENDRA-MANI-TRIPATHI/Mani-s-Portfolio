@@ -28,7 +28,16 @@ const ButtonPrimary = ({
     }
     else {
         return (
-            <button className={"btn btn-primary" + classes}>
+            <button
+                className={"btn btn-primary" + classes}
+                onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/My_CV.pdf';
+                    link.download = 'Devendra_CV.pdf';
+                    link.click();
+                }}
+            
+            >
                 {label}
                 {icon ? 
                     <span className="material-symbols-rounded" aria-hidden="true">
